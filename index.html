@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html class="html">
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Shadows Over Innistrad - Double-Faced Card Viewer</title>
+
+    <meta name="keywords" content="" />
+    <meta name="description" content="shadows over innistrad double faced card display">
+    <meta name="author" content="tehpurpleman">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300normal" rel="stylesheet">
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .html {
+            background: #000000;
+        }
+
+        .body {
+            background: #000000;
+            margin-top: 40px;
+        }
+
+        h1, h2, p {
+            font-family: "Roboto";
+            font-weight: 300;
+            font-style: normal;
+            color: #666;
+        }
+        .double-faced-image {
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div class="body">
+<div role="main" class="main">
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h1>Kindly Stranger</h1>
+        </div>
+        <div class="col-md-12 text-center" style="overflow:hidden; height:0; padding-bottom:75%;">
+            <img onclick="flip_card()" src="Kindly Stranger/1.jpg" class="double-faced-image" id="front-face"/>
+            <img onclick="flip_back()" src="Kindly Stranger/2.jpg" class="double-faced-image" style="width:100%; left:0%; position:absolute; display:none;" id="back-face"/>
+        </div>
+    </div>
+</div>
+<!-- http://soundbible.com/1129-Maniacal-Witches-Laugh.html -->
+
+</div>
+
+
+
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function flip_card() {
+            $('#front-face').fadeOut(1500);
+            $('#back-face').delay(1900).fadeIn(0).delay(100).fadeOut(0)
+            .delay(600).animate({ width:"240%",top:"-2%",left: "-51%"}, {duration:0, easing:'linear'}).fadeIn(0)
+            // .delay(600).animate({ width:"190%",top:"-2%",left: "-31%"}, {duration:0, easing:'linear'}).fadeIn(0)
+            // .delay(5000).animate({ width:"100%",left: "0%"}, {duration:1000, easing:'linear'});
+        }
+        function flip_back() {
+            $('#back-face').hide();
+            $('#front-face').show();
+        }
+    </script>
+</body>
+</html>
